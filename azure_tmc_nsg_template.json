@@ -5,6 +5,10 @@
         "networkSecurityGroups_al_tm_NSG_name": {
             "defaultValue": "al-tm-NSG",
             "type": "String"
+        },
+        "Location": {
+            "defaultValue": "centralUS",
+            "type": "String"
         }
     },
     "variables": {},
@@ -14,7 +18,7 @@
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[parameters('networkSecurityGroups_al_tm_NSG_name')]",
             "apiVersion": "2016-03-30",
-            "location": "westus",
+            "location": "[parameters('Location')]",
             "properties": {
                 "securityRules": [
                     {
