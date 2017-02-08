@@ -1,0 +1,264 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {       
+        "networkSecurityGroups_al_tm_NSG_name": {
+            "defaultValue": "al-tm-NSG",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/b125c428-b8a4-4eb0-ab78-59b27f540da8/resourceGroups/AlertLogic-TMC/providers/Microsoft.Network/networkSecurityGroups/al-tm-NSG'.",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[parameters('networkSecurityGroups_al_tm_NSG_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "centralus",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "ssh-rule-1",
+                        "properties": {
+                            "description": "Allow SSH",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "22",
+                            "sourceAddressPrefix": "204.110.218.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2000,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "ssh-rule-2",
+                        "properties": {
+                            "description": "Allow SSH",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "22",
+                            "sourceAddressPrefix": "204.110.219.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2100,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "ssh-rule-3",
+                        "properties": {
+                            "description": "Allow SSH",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "22",
+                            "sourceAddressPrefix": "208.71.209.32/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2200,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "pwaf-rule-1",
+                        "properties": {
+                            "description": "Allow WSM UI",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "4849",
+                            "sourceAddressPrefix": "204.110.218.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2210,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "pwaf-rule-2",
+                        "properties": {
+                            "description": "Allow WSM UI",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "4849",
+                            "sourceAddressPrefix": "204.110.219.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2220,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "pwaf-rule-3",
+                        "properties": {
+                            "description": "Allow WSM UI",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "4849",
+                            "sourceAddressPrefix": "208.71.209.32/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2230,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "update-rule-1",
+                        "properties": {
+                            "description": "Allow HTTPS",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "443",
+                            "sourceAddressPrefix": "204.110.218.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2300,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "update-rule-2",
+                        "properties": {
+                            "description": "Allow HTTPS",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "443",
+                            "sourceAddressPrefix": "204.110.219.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2400,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "update-rule-3",
+                        "properties": {
+                            "description": "Allow HTTPS",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "443",
+                            "sourceAddressPrefix": "208.71.209.32/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2500,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "transport-rule-1",
+                        "properties": {
+                            "description": "Allow Event Transport",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "4138",
+                            "sourceAddressPrefix": "204.110.218.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2600,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "transport-rule-2",
+                        "properties": {
+                            "description": "Allow Event Transport",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "4138",
+                            "sourceAddressPrefix": "204.110.219.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2700,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "transport-rule-3",
+                        "properties": {
+                            "description": "Allow Event Transport",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "4138",
+                            "sourceAddressPrefix": "208.71.209.32/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2800,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "dns-rule-1",
+                        "properties": {
+                            "description": "Allow DNS",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "53",
+                            "sourceAddressPrefix": "204.110.218.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 2900,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "dns-rule-2",
+                        "properties": {
+                            "description": "Allow DNS",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "53",
+                            "sourceAddressPrefix": "204.110.219.96/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 3000,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "dns-rule-3",
+                        "properties": {
+                            "description": "Allow DNS",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "53",
+                            "sourceAddressPrefix": "208.71.209.32/27",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 3100,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "general-update-rule",
+                        "properties": {
+                            "description": "Allow Package Updates",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "80",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 3200,
+                            "direction": "Outbound"
+                        }
+                    },
+                    {
+                        "name": "general-http-rule",
+                        "properties": {
+                            "description": "Allow HTTP traffic",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "80",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 3300,
+                            "direction": "Inbound"
+                        }
+                    }
+                ]
+            },
+            "resources": [],
+            "dependsOn": []
+        }
+    ]
+}
