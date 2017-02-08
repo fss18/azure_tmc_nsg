@@ -14,7 +14,7 @@
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[parameters('networkSecurityGroups_al_tm_NSG_name')]",
             "apiVersion": "2016-03-30",
-            "location": "centralus",
+            "location": "westus",
             "properties": {
                 "securityRules": [
                     {
