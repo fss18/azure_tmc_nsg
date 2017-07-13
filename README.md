@@ -1,5 +1,4 @@
-# azure_tmc_nsg
-Azure network security group for Alert Logic Threat Manager marketplace.
+# Azure network security group for Alert Logic Threat Manager marketplace.
 
 Use the provided link to deploy the NSG based on ARM template, this would be one click deployment of NSG prior to customer creating the VM from the Azure Marketplace.
 Steps:
